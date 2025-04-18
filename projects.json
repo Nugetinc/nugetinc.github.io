@@ -1,0 +1,25 @@
+[
+    {
+      "id": "revitalized",
+      "title": "360 Revitalized",
+      "description": "A remake of the Metro Storefront to Learn how Javascript Works.",
+      "advanced": "360 Revitalized is an open-source project aimed at recreating the classic Xbox 360 Store experience web.\nBuilt with nostalgia in mind, this project provides a fresh yet familiar look and feel while retaining most of the features of the original Xbox 360 marketplace.  It serves as a practice tool for understanding JavaScript functionality and web development principles.",
+      "image": "assets/revitalized.png",
+      "github": "https://github.com/nugetinc/360-Revitalized",
+      "website": "https://nugetinc.github.io/360-Revitalized/"
+    },
+    {
+      "id": "acfman",
+      "title": "ACFman",
+      "description": "A utility to share Steam ACF files easily.",
+      "advanced": "ACFMan, or ACF Manifestor, is a tool designed to simplify the sharing of manifest and ACF files. It allows users to easily share their Steam ACF files with others, offering a convenient solution for those who need to transfer or back up their game data.\nI never finished this tool, but have plans to in the future.",
+      "image": "assets/acfman.png"
+    },
+    {
+      "id": "floppycent",
+      "title": "Floppycent",
+      "description": "My Game that I have been working on for a while   .",
+      "image": "assets/floppycent.png"
+    }
+  ]
+  

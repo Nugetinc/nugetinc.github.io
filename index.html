@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Nugets Projects</h1>
+        <p>Welcome to my portfolio featuring my creations.</p>
+    </header>
+
+    <section class="about">
+            <h2>About Me</h2>
+            <p>Learning Basic Web Development.</p>
+            <p>Decent with Godot. Experience creating simple games, such as FloppyCent.</p>
+            <h1> Interests:</h1>
+                <p>Consoles: I enjoy emulating and learning about how Console mods work.</p>
+                <p>Learning: I try my best to learn how new stuff works as much as I can.</p>
+                <p>I also run a Minecraft Server with Ribbit.</p>
+    </section>
+
+
+    <main class="projects" id="projects-container">
+        <!-- project cards should load -->
+    </main>
+
+    
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:nugetinc@gmail.com">nugetinc@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/nugetinc" target="_blank">github.com/nugetinc</a></p>
+    </section>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

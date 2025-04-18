@@ -1,0 +1,140 @@
+/* style.css */
+
+:root {
+    --bg: #0b0e14;
+    --text: #d0f0ff;
+    --primary: #36ffb1;
+    --accent: #8be9fd;
+    --card: #141a23;
+    --border-radius: 12px;
+    --shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier New", Courier, monospace;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-size: 3.2rem;
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.about, .contact {
+    background-color: var(--card);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.about h2, .about h1 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.about p, .contact p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.project-card {
+    background-color: var(--card);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px var(--primary);
+    border-color: var(--accent);
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Modal */
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 10, 20, 0.9);
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--card);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    border: 2px solid var(--primary);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.6rem;
+    color: var(--accent);
+    cursor: pointer;
+}
+
+#modal-details {
+    margin-top: 20px;
+}
+    
