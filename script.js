@@ -1,34 +1,35 @@
-async function loadProjects() {
-    const response = await fetch('projects.json');
-    const projects = await response.json();
-  
-    const container = document.getElementById('projects-container');
-    projects.forEach(project => {
-      const card = document.createElement('div');
-      card.classList.add('project-card');
-      card.innerHTML = `
-        <h2>${project.title}</h2>
-        <p>${project.description}</p>
-      `;
-      card.onclick = () => openModal(project);
-      container.appendChild(card);
+const feed = document.getElementById('blog-feed');
+const popularList = document.getElementById('popular-posts');
+
+fetch('posts/posts.json')
+  .then(res => res.json())
+  .then(posts => {
+    posts.forEach(post => {
+      fetch(post.file)
+        .then(res => res.text())
+        .then(html => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = html;
+          
+          const firstParagraph = tempDiv.querySelector('article p');
+          const snippet = firstParagraph ? firstParagraph.innerText : 'No preview available';
+
+          const card = document.createElement('div');
+          card.className = 'blog-card';
+          card.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${snippet}</p>
+            <a class="read-more" href="${post.file}">Read More →</a>
+          `;
+          feed.appendChild(card);
+          
+          if (post.popular) {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${post.file}">${post.title}</a>`;
+            popularList.appendChild(li);
+          }
+        })
+        .catch(err => console.error('Error loading post:', err));
     });
-  }
-  
-  function openModal(project) {
-    document.getElementById("modal-details").innerHTML = `
-      <h2>${project.title}</h2>
-      <p>${project.advanced}</p>
-      <p>
-        <a href="${project.link}" target="_blank">GitHub</a> 
-      </p>
-    `;
-    document.getElementById("modal").classList.remove("hidden");
-  }
-  
-  function closeModal() {
-    document.getElementById("modal").classList.add("hidden");
-  }
-  
-  loadProjects();
-  
+  })
+  .catch(err => console.error('Error loading JSON:', err));

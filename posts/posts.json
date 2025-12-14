@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Welcome To Nugets Blog",
+    "file": "posts/2025/post1.html",
+    "popular": true
+  },
+  {
+    "title": "Update #1",
+    "file": "posts/2025/post2.html",
+    "popular": true
+  },
+  {
+    "title": "Again Update",
+    "file": "posts/2025/post3.html",
+    "popular": false
+  },
+  {
+    "title": "The future for my soundtracks ",
+    "file": "posts/2025/post4.html",
+    "popular": false
+  }
+]
