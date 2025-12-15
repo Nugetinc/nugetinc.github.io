@@ -15,8 +15,18 @@
     "popular": false
   },
   {
-    "title": "The future for my soundtracks ",
+    "title": "The future for my soundtracks",
     "file": "posts/2025/post4.html",
+    "popular": false
+  },
+  {
+    "title": "Update #2",
+    "file": "posts/2025/post5.html",
+    "popular": false
+  },
+  {
+    "title": "Again Update #2",
+    "file": "posts/2025/post6.html",
     "popular": false
   }
 ]
