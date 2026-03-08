@@ -2,12 +2,12 @@
   {
     "title": "Welcome To Nugets Blog",
     "file": "posts/2025/post1.html",
-    "popular": true
+    "popular": false
   },
   {
     "title": "Update #1",
     "file": "posts/2025/post2.html",
-    "popular": true
+    "popular": false
   },
   {
     "title": "Again Update",
@@ -28,5 +28,15 @@
     "title": "Again Update #2",
     "file": "posts/2025/post6.html",
     "popular": false
+  },
+  {
+    "title": "Where or what is a Nugetinc?",
+    "file": "posts/2026/post1.html",
+    "popular": true
+  },
+  {
+    "title": "When is Again?",
+    "file": "posts/2026/post2.html",
+    "popular": true
   }
 ]
