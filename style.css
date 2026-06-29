@@ -1,0 +1,330 @@
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: yellow;
+  font-family: "Papyrus", "Comic Sans MS", cursive;
+  color: red;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes scroll-left { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+@keyframes rainbow-bg {
+  0%   { background: blue; }
+  20%  { background: green; }
+  40%  { background: purple; }
+  60%  { background: red; }
+  80%  { background: teal; }
+  100% { background: blue; }
+}
+@keyframes jitter {
+  0%   { transform: rotate(-6deg) translate(0,0); }
+  25%  { transform: rotate(-3deg) translate(2px,-2px); }
+  50%  { transform: rotate(-9deg) translate(-2px,2px); }
+  75%  { transform: rotate(-5deg) translate(1px,1px); }
+  100% { transform: rotate(-6deg) translate(0,0); }
+}
+@keyframes loadbar {
+  0%   { width: 0%; }
+  45%  { width: 68%; }
+  46%  { width: 67%; }
+  90%  { width: 99%; }
+  100% { width: 100%; }
+}
+@keyframes spin-badge { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes float-emoji { 0% { transform: translateY(0) scale(1); opacity:1; } 100% { transform: translateY(-40px) scale(0.4); opacity:0; } }
+
+/* loader nobody asked for */
+.fake-loader {
+  width: 100%;
+  height: 18px;
+  background: black;
+  border-bottom: 3px dashed lime;
+}
+.fake-loader-bar {
+  height: 100%;
+  background: repeating-linear-gradient(45deg, lime, lime 10px, black 10px, black 20px);
+  animation: loadbar 3.7s infinite;
+}
+.fake-loader-text {
+  background: black;
+  color: lime;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: monospace;
+}
+
+/* marquee of nonsense */
+.marquee-bar {
+  background: black;
+  color: lime;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 6px 0;
+  font-family: monospace;
+  font-size: 14px;
+  border-bottom: 4px ridge magenta;
+}
+.marquee-text {
+  display: inline-block;
+  animation: scroll-left 11s linear infinite;
+}
+
+.construction-banner {
+  background: orange;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 8px;
+  border-top: 5px dotted black;
+  border-bottom: 5px dotted black;
+  letter-spacing: 4px;
+}
+.blink { animation: blink 0.9s step-start infinite; }
+
+.container {
+  position: relative;
+  left: 40px;
+  top: 20px;
+  transform: rotate(-1deg);
+  padding-bottom: 250px;
+}
+
+.header {
+  color: yellow;
+  font-size: 60px;
+  padding: 10px;
+  width: 120%;
+  transform: rotate(2deg);
+  border: 8px solid red;
+  animation: rainbow-bg 5s infinite;
+  text-shadow: 4px 4px black;
+}
+
+.counter {
+  background: black;
+  color: lime;
+  font-family: monospace;
+  font-size: 20px;
+  display: inline-block;
+  padding: 6px 14px;
+  margin-top: 10px;
+  border: 3px inset white;
+  letter-spacing: 4px;
+}
+
+.nav {
+  margin-top: 30px;
+  background: lime;
+  padding: 20px;
+  font-size: 12px;
+  letter-spacing: 8px;
+  transform: rotate(-3deg);
+}
+.nav span {
+  margin-right: 40px;
+  display: inline-block;
+  cursor: help;
+}
+.nav span:hover { color: white; background: black; }
+
+.divider {
+  width: 200%;
+  height: 20px;
+  background: linear-gradient(to right, red, blue, lime, yellow, magenta);
+  margin-top: 40px;
+  transform: rotate(1deg);
+}
+
+.content {
+  margin-top: 50px;
+  width: 200px;
+  background: magenta;
+  color: black;
+  padding: 30px;
+  font-size: 14px;
+  line-height: 3;
+  transform: rotate(4deg);
+}
+
+button {
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 24px;
+  padding: 25px;
+  background: red;
+  color: yellow;
+  border: 10px groove blue;
+  animation: jitter 0.6s infinite;
+}
+button:hover { transform: rotate(6deg) scale(1.15); }
+
+.box {
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  background: cyan;
+  color: black;
+  padding: 50px;
+  transform: rotate(-12deg);
+  border: 10px dotted black;
+  width: 220px;
+}
+
+.side {
+  position: absolute;
+  top: 100px;
+  right: -50px;
+  width: 220px;
+  background: orange;
+  padding: 20px;
+  transform: rotate(15deg);
+  font-size: 11px;
+}
+
+.section {
+  background: white;
+  color: black;
+  width: 480px;
+  margin: 60px auto 0 0;
+  padding: 25px;
+  border: 6px double black;
+  font-size: 13px;
+}
+.section h2 {
+  background: black;
+  color: lime;
+  display: inline-block;
+  padding: 4px 14px;
+  transform: rotate(-2deg);
+  font-size: 22px;
+}
+.section.about { background: #aaffaa; transform: rotate(2deg); }
+.section.skills { background: #ffaaaa; transform: rotate(-2deg); }
+.section.testimonials { background: #aaaaff; transform: rotate(1deg); }
+.section.faq { background: #ffffaa; transform: rotate(-1deg); }
+.section.guestbook { background: #ffd9f3; transform: rotate(3deg); }
+.section.badges { background: #d9fff3; transform: rotate(-3deg); }
+.section.contact { background: #fff0d9; transform: rotate(2deg); }
+
+.skillbar-row { margin-bottom: 14px; }
+.skillbar-outer {
+  width: 100%;
+  height: 22px;
+  background: black;
+  border: 3px solid grey;
+  overflow: visible;
+}
+.skillbar-inner {
+  height: 100%;
+  background: repeating-linear-gradient(45deg, red, red 8px, yellow 8px, yellow 16px);
+}
+
+.testimonial {
+  border-left: 6px solid purple;
+  padding-left: 10px;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+.guestbook-box {
+  height: 90px;
+  overflow-y: scroll;
+  background: black;
+  color: lime;
+  font-family: monospace;
+  font-size: 11px;
+  padding: 8px;
+  border: 3px inset white;
+}
+
+.badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge {
+  width: 88px;
+  height: 31px;
+  background: black;
+  color: lime;
+  font-size: 9px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px outset grey;
+  font-family: monospace;
+  animation: spin-badge 6s linear infinite;
+}
+
+.contact label { display: block; margin-top: 8px; font-size: 11px; }
+.contact input, .contact textarea {
+  width: 100%;
+  font-family: "Comic Sans MS", cursive;
+  background: black;
+  color: lime;
+  border: 2px inset grey;
+}
+
+.now-playing {
+  margin-top: 30px;
+  background: black;
+  color: magenta;
+  font-family: monospace;
+  padding: 6px;
+  letter-spacing: 3px;
+}
+
+.webring {
+  margin-top: 20px;
+  background: silver;
+  padding: 10px;
+  font-size: 11px;
+  text-align: center;
+  border: 3px ridge black;
+}
+.webring a { color: blue; margin: 0 10px; }
+
+.chaos-button {
+  background: black !important;
+  color: lime !important;
+  border: 8px dashed red !important;
+  font-size: 20px;
+}
+
+.footer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: black;
+  color: white;
+  font-size: 10px;
+  padding: 5px;
+  z-index: 999;
+  text-align: right;
+}
+
+.ai-box {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: purple;
+  color: white;
+  padding: 12px;
+  width: 160px;
+  font-size: 11px;
+  border: 4px solid lime;
+  cursor: pointer;
+  z-index: 998;
+  transform: rotate(-3deg);
+}
+.ai-box:hover { transform: rotate(3deg); }
+
+.floaty-emoji {
+  position: fixed;
+  pointer-events: none;
+  font-size: 18px;
+  animation: float-emoji 1s forwards;
+  z-index: 1000;
+}
